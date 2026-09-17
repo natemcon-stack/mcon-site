@@ -45,17 +45,32 @@ export async function POST(request) {
     if (supabaseUrl && serviceKey && companyId) {
       try {
         const supabase = createClient(supabaseUrl, serviceKey);
+        // The leads table was built for public tender listings — title, organization,
+        // snippet — so a website enquiry has to be mapped onto those columns rather
+        // than inventing new ones. The title is what shows in the CRM's list, so it
+        // carries the caller's name and how to reach them.
+        const contact = [lead.phone, lead.email].filter(Boolean).join(" · ");
         const { error } = await supabase.from("leads").insert([{
           company_id: companyId,
           source: "website",
-          name: lead.name,
-          phone: lead.phone || null,
-          email: lead.email || null,
-          address: lead.address || null,
-          notes: lead.message,
+          // Deduplicates a double submit, and makes a re-send of the same enquiry
+          // update rather than pile up.
+          external_ref: `web-${Date.now()}`,
+          title: lead.name,
+          organization: contact || null,
+          category: "website_enquiry",
+          region: lead.address || null,
+          snippet: lead.message,
           status: "new",
         }]);
-        if (!error) savedToCrm = true;
+        if (error) {
+          // Logged so a schema mismatch shows up in the Vercel logs rather than
+          // silently falling back to email — which is how the old form's failure went
+          // unnoticed for weeks.
+          console.error("Lead insert failed:", error.message);
+        } else {
+          savedToCrm = true;
+        }
       } catch (e) {
         // Falls through to the email. An enquiry that reaches a human beats one that
         // fails cleanly.
