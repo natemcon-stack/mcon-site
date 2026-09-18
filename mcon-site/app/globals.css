@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The rule system borrows from a quote sheet — the thing M-CON actually hands a client.
+   Figures align on a decimal column the way they do on an invoice, which is what makes
+   the published rates read as a working document rather than as marketing. */
+
+body {
+  background: #FBFBFA;
+  color: #1E282C;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: Archivo, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.rule-item { border-bottom: 1px solid #C9CFCE; }
+.rule-total { border-top: 2px solid #1E282C; }
+.figures { font-variant-numeric: tabular-nums; }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #A3231B;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
