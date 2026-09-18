@@ -61,6 +61,11 @@ export async function POST(request) {
           category: "website_enquiry",
           region: lead.address || null,
           snippet: lead.message,
+          // Stored properly as well as in the display fields, so the lead can be turned
+          // into a contact without anyone retyping a phone number off a screen.
+          contact_name: lead.name,
+          contact_phone: lead.phone || null,
+          contact_email: lead.email || null,
           status: "new",
         }]);
         if (error) {
