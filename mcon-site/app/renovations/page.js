@@ -12,8 +12,9 @@ export default function Page() {
       title="Renovations, start to finish"
       lede="Many renovations need stripping back to framing. There's no point updating the look if the structure behind it isn't sound."
       photos={[
-        { src: "/images/renovations-1.jpg", alt: "A kitchen renovation by M-CON Enterprises" },
-        { src: "/images/renovations-2.jpg", alt: "A bathroom renovation by M-CON Enterprises" },
+        { src: "/images/renovations-1.jpg", alt: "A renovated kitchen with a cedar ceiling and full-height cabinets" },
+        { src: "/images/renovations-2.jpg", alt: "A renovated kitchen with white cabinets and dark countertops" },
+        { src: "/images/renovations-3.jpg", alt: "Interior framing for a new partition during a renovation" },
       ]}
     >
       <p>

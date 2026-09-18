@@ -12,8 +12,8 @@ export default function Page() {
       title="Concrete and ICF foundations"
       lede="Foundations, slabs, footings and flatwork, formed with insulated concrete forms."
       photos={[
-        { src: "/images/icf-1.jpg", alt: "An ICF foundation by M-CON Enterprises" },
-        { src: "/images/concrete-1.jpg", alt: "Concrete flatwork by M-CON Enterprises" },
+        { src: "/images/icf-1.jpg", alt: "Insulated concrete forms set for a new foundation" },
+        { src: "/images/concrete-1.jpg", alt: "Formwork and a concrete pour underway" },
       ]}
     >
       <p>

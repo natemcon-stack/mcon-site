@@ -73,10 +73,16 @@ export default function Home() {
           evidence behind it rather than a decorative header image. */}
       <section className="mx-auto max-w-5xl px-5 pb-4">
         <div className="grid gap-4 sm:grid-cols-3">
-          <Photo src="/images/home-1.jpg" alt="Recent work by M-CON Enterprises Inc." />
-          <Photo src="/images/home-2.jpg" alt="Recent work by M-CON Enterprises Inc." />
-          <Photo src="/images/home-3.jpg" alt="Recent work by M-CON Enterprises Inc." />
+          <Photo src="/images/home-1.jpg" alt="A finished home with new siding and stone facing in Powell River" />
+          <Photo src="/images/home-2.jpg" alt="A renovated kitchen with navy cabinets and a stone island" />
+          <Photo src="/images/home-3.jpg" alt="A timber-framed pavilion under construction, showing exposed beams" />
         </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-5 pb-12">
+        <a href="/gallery" className="font-display text-red underline hover:text-red-dark">
+          See more of our work
+        </a>
       </section>
 
       <section className="border-t border-rule bg-concrete">

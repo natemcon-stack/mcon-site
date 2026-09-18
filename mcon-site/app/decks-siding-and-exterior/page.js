@@ -12,8 +12,10 @@ export default function Page() {
       title="Decks, siding and exterior"
       lede="New decks, complete siding replacement, windows and doors, and garage door service, supply and installation."
       photos={[
-        { src: "/images/deck-1.jpg", alt: "A cedar deck built by M-CON Enterprises" },
-        { src: "/images/siding-1.jpg", alt: "Siding replacement by M-CON Enterprises" },
+        { src: "/images/deck-1.jpg", alt: "A cedar deck with wrapped steps off a back entrance" },
+        { src: "/images/deck-2.jpg", alt: "A finished deck with an ocean view" },
+        { src: "/images/deck-3.jpg", alt: "A timber deck cover framed in black, looking out to the water" },
+        { src: "/images/siding-1.jpg", alt: "A house with newly installed siding and trim" },
       ]}
     >
       <p>

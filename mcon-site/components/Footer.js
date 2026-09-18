@@ -33,6 +33,7 @@ export default function Footer() {
               ))}
             </ul>
             <ul className="mt-4 border-t border-rule pt-3 text-sm">
+              <li className="mb-1.5"><Link href="/gallery" className="hover:text-red">Our work</Link></li>
               <li className="mb-1.5"><Link href="/about" className="hover:text-red">About</Link></li>
               <li className="mb-1.5"><Link href="/faq" className="hover:text-red">FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-red">Contact</Link></li>
