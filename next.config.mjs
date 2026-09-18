@@ -40,7 +40,7 @@ const redirects = [
   ["/services/real-estate-transaction-quotes", "/contact"],
   ["/about-us", "/about"],
   ["/about-us/testimonials", "/about"],
-  ["/about-us/gallery", "/"],
+  ["/about-us/gallery", "/gallery"],
   ["/contact-us", "/contact"],
   ["/blog", "/"],
 ];

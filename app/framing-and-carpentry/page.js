@@ -12,8 +12,9 @@ export default function Page() {
       title="Framing and carpentry"
       lede="Planning a new build, an addition, or structural alterations to your home — plus all the finish work to close things up after? We can help."
       photos={[
-        { src: "/images/framing-1.jpg", alt: "Framing work in progress by M-CON Enterprises" },
-        { src: "/images/framing-2.jpg", alt: "Finish carpentry by M-CON Enterprises" },
+        { src: "/images/framing-1.jpg", alt: "An excavator lifting a framed wall into place" },
+        { src: "/images/framing-2.jpg", alt: "A curved hardwood staircase built by M-CON Enterprises" },
+        { src: "/images/framing-3.jpg", alt: "A timber-frame pavilion under construction, showing the beam work" },
       ]}
     >
       <p>

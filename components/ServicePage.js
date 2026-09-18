@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PHONE, PHONE_HREF } from "@/lib/services";
+import Photo from "@/components/Photo";
 
 // Shared wrapper for a service page, so the nine of them stay consistent and a change
 // to the layout is one edit rather than nine.
@@ -26,18 +27,7 @@ export default function ServicePage({ title, lede, children, photos = [], rates 
         {photos.length > 0 && (
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
             {photos.map((p) => (
-              <figure key={p.src}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  loading="lazy"
-                  className="w-full border border-rule bg-concrete object-cover"
-                />
-                {p.caption && (
-                  <figcaption className="mt-2 text-sm text-cedar">{p.caption}</figcaption>
-                )}
-              </figure>
+              <Photo key={p.src} src={p.src} alt={p.alt} caption={p.caption} />
             ))}
           </div>
         )}

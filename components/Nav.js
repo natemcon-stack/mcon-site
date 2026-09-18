@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { SERVICES, PHONE, PHONE_HREF } from "@/lib/services";
+import Logo from "@/components/Logo";
 
 // The phone number stays visible at every width. On a trade site it's the primary
 // action — most people who decide to get in touch will call rather than fill in a form.
@@ -11,8 +12,8 @@ export default function Nav() {
   return (
     <header className="border-b border-rule bg-paper">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
-        <Link href="/" className="font-display text-lg font-700 leading-none tracking-tight">
-          M-CON <span className="text-red">Enterprises Inc.</span>
+        <Link href="/" aria-label="M-CON Enterprises Inc. home">
+          <Logo />
         </Link>
 
         <div className="flex items-center gap-5">
@@ -24,6 +25,7 @@ export default function Nav() {
             >
               Services
             </button>
+            <Link href="/gallery" className="font-display hover:text-red">Our work</Link>
             <Link href="/about" className="font-display hover:text-red">About</Link>
             <Link href="/faq" className="font-display hover:text-red">FAQ</Link>
             <Link href="/contact" className="font-display hover:text-red">Contact</Link>
@@ -61,6 +63,7 @@ export default function Nav() {
               ))}
             </ul>
             <ul className="mt-3 flex gap-5 border-t border-rule pt-3 text-sm md:hidden">
+              <li><Link href="/gallery" onClick={() => setOpen(false)}>Our work</Link></li>
               <li><Link href="/about" onClick={() => setOpen(false)}>About</Link></li>
               <li><Link href="/faq" onClick={() => setOpen(false)}>FAQ</Link></li>
               <li><Link href="/contact" onClick={() => setOpen(false)}>Contact</Link></li>

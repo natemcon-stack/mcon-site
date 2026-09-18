@@ -12,7 +12,8 @@ export default function Page() {
       title="Rollout and multi-site work"
       lede="Some jobs aren't one site — they're the same task at twenty, on a schedule, done the same way each time."
       photos={[
-        { src: "/images/rollout-1.jpg", alt: "Bollard work at a multi-site rollout project" },
+        { src: "/images/rollout-1.jpg", alt: "Bollard and wheel stop work at a Tesla Supercharger station" },
+        { src: "/images/rollout-2.jpg", alt: "A completed television display installation" },
       ]}
     >
       <p>We take on rollout work throughout the province. Recent projects:</p>

@@ -12,7 +12,8 @@ export default function Page() {
       title="Commercial construction and maintenance"
       lede="Landlord build-backs and tenant improvements, from permitting through to handover."
       photos={[
-        { src: "/images/commercial-1.jpg", alt: "A commercial tenant improvement by M-CON Enterprises" },
+        { src: "/images/commercial-1.jpg", alt: "A finished commercial counter with stainless sinks" },
+        { src: "/images/commercial-2.jpg", alt: "Commercial exterior work at a retail storefront" },
       ]}
       rates={[{ label: "Commercial labour", value: "$110 per man hour" }]}
     >

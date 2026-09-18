@@ -12,8 +12,10 @@ export default function Page() {
       title="Carports, garages and auxiliary structures"
       lede="We build carports, garages, barns, shops and other auxiliary structures."
       photos={[
-        { src: "/images/new-build-1.jpg", alt: "A garage built by M-CON Enterprises" },
-        { src: "/images/new-build-2.jpg", alt: "A carport built by M-CON Enterprises" },
+        { src: "/images/new-build-1.jpg", alt: "A garage framed and sheathed in winter" },
+        { src: "/images/new-build-2.jpg", alt: "A garden shed with timber posts and a metal roof" },
+        { src: "/images/new-build-3.jpg", alt: "A barn and carport before restoration work began" },
+        { src: "/images/new-build-4.jpg", alt: "The same barn and carport after restoration" },
       ]}
     >
       <h2>New homes</h2>

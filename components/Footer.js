@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SERVICES, PHONE, PHONE_HREF, EMAIL } from "@/lib/services";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-5 py-12">
         <div className="grid gap-10 sm:grid-cols-[1.2fr_1fr]">
           <div>
-            <p className="font-display text-lg font-700">M-CON Enterprises Inc.</p>
+            <Logo />
             <p className="mt-3 max-w-prose text-sm leading-relaxed text-ink/80">
               Renovations, builds and restoration on the Upper Sunshine Coast — Powell
               River, the qathet region and the surrounding islands. Remote and rollout
@@ -32,6 +33,7 @@ export default function Footer() {
               ))}
             </ul>
             <ul className="mt-4 border-t border-rule pt-3 text-sm">
+              <li className="mb-1.5"><Link href="/gallery" className="hover:text-red">Our work</Link></li>
               <li className="mb-1.5"><Link href="/about" className="hover:text-red">About</Link></li>
               <li className="mb-1.5"><Link href="/faq" className="hover:text-red">FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-red">Contact</Link></li>

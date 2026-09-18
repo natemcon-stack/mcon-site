@@ -13,6 +13,39 @@ export const metadata = {
 
 const FAQS = [
   {
+    q: "What should I check before hiring any contractor?",
+    a: (
+      <>
+        <p>Three things, and ask for all of them in writing:</p>
+        <ul className="list-disc pl-5">
+          <li>A WorkSafeBC clearance letter</li>
+          <li>Proof of liability insurance</li>
+          <li>A business licence</li>
+        </ul>
+        <p>
+          If a contractor can&apos;t produce those, they aren&apos;t in a position to
+          stand behind their work — and you&apos;re the one carrying the risk if
+          something goes wrong on your property.
+        </p>
+      </>
+    ),
+  },
+  {
+    q: "Do you do cash jobs?",
+    a: (
+      <>
+        <p>
+          We accept cash as legal tender, but your method of payment won&apos;t change
+          the price of your project. We pay our taxes.
+        </p>
+        <p>
+          The way we view it: if a contractor is willing to cheat the government,
+          what&apos;s to stop them acting dishonourably with their clients?
+        </p>
+      </>
+    ),
+  },
+  {
     q: "Do you build new homes?",
     a: (
       <>
@@ -27,6 +60,22 @@ const FAQS = [
           choose: many GCs offer new home builds using someone else&apos;s new home
           warranty information, and that is not a situation you want to be in if your
           project runs into problems.
+        </p>
+      </>
+    ),
+  },
+  {
+    q: "What should I check before hiring any contractor?",
+    a: (
+      <>
+        <p>
+          Ask for three things, from us or anyone else: a WorkSafeBC clearance letter,
+          proof of insurance, and a business licence.
+        </p>
+        <p>
+          If a contractor doesn&apos;t have them, they aren&apos;t in a position to stand
+          behind their work. It isn&apos;t a matter of goodwill — without coverage, there
+          is nothing to draw on if something goes wrong on your property.
         </p>
       </>
     ),
@@ -80,6 +129,23 @@ const FAQS = [
         don&apos;t use. We&apos;re happy to work with your insurer directly and to price
         competitively against the contractors who are on the list.
       </p>
+    ),
+  },
+  {
+    q: "What if you can't fit my project into your schedule?",
+    a: (
+      <>
+        <p>
+          Then we&apos;ll say so, and we&apos;re happy to recommend another contractor who
+          might be able to. Just ask — we&apos;d rather point you somewhere useful than
+          hold up your project.
+        </p>
+        <p>
+          qathet Living also published a Home and Hammer insert in 2026 listing local
+          contractors and trades. It&apos;s worth a look if you&apos;re gathering
+          options.
+        </p>
+      </>
     ),
   },
   {
@@ -143,6 +209,21 @@ const FAQS = [
         A deposit is taken at the start of your project and applied to your final weekly
         invoice. Anything left over is refunded to you promptly.
       </p>
+    ),
+  },
+  {
+    q: "Do you do cash jobs?",
+    a: (
+      <>
+        <p>
+          We accept cash as legal tender, but your method of payment won&apos;t change the
+          price of your project. We pay our taxes.
+        </p>
+        <p>
+          The way we see it: if a contractor is willing to cheat the government,
+          what&apos;s to stop them acting dishonourably with their clients?
+        </p>
+      </>
     ),
   },
   {

@@ -12,7 +12,8 @@ export default function Page() {
       title="Roofing"
       lede="What our crew installs, what we arrange through our subtrades, and what we'll come out for when a roof is already leaking."
       photos={[
-        { src: "/images/roofing-1.jpg", alt: "Metal cladding on an outbuilding by M-CON Enterprises" },
+        { src: "/images/roofing-1.jpg", alt: "Metal roofing installed on a large outbuilding" },
+        { src: "/images/roofing-2.jpg", alt: "A completed metal roof on an auxiliary building" },
       ]}
     >
       <h2>Residential and commercial roofing</h2>

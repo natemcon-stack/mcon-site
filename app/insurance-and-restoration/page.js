@@ -12,7 +12,9 @@ export default function Page() {
       title="Restoration after an insurance claim"
       lede="Flooding, water damage and the rebuild that follows."
       photos={[
-        { src: "/images/restoration-1.jpg", alt: "Water damage restoration by M-CON Enterprises" },
+        { src: "/images/restoration-1.jpg", alt: "Standing water across a hardwood floor after a flood" },
+        { src: "/images/restoration-2.jpg", alt: "An air mover and dehumidifier running in a stripped room" },
+        { src: "/images/restoration-3.jpg", alt: "Flooring lifted and drying equipment set up in a flooded kitchen" },
       ]}
     >
       <p>

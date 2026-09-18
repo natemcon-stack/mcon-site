@@ -32,6 +32,17 @@ select id, name from companies order by created_at;
 
 ## Photos
 
+60 photographs are already in place — 28 on service pages and 32 in the gallery, all of
+M-CON's own work with no stock imagery. Originals came from Nate's phone; each one has
+had its EXIF rotation baked in (browsers often ignore the tag) and been resized to
+1600px for pages, 1100px for the gallery.
+
+To add or change a gallery photo, drop the file in `public/images/gallery/` and add a
+line to `lib/gallery.json`. To change a service page photo, replace the file in
+`public/images/` keeping the same name, or edit the `photos` list in that page.
+
+### Original photo list
+
 Photos are spread through the service pages rather than collected in a gallery. Each
 page names the files it expects — drop them into `public/images/` with these names and
 they appear. **Images only render when the file exists**, so the site deploys fine
@@ -48,6 +59,17 @@ without them and you can add them as you go.
 | `restoration-1.jpg` | Insurance and restoration |
 | `commercial-1.jpg` | Commercial |
 | `rollout-1.jpg` | Rollout projects |
+| `home-1.jpg`, `home-2.jpg`, `home-3.jpg` | Home page — your three best |
+
+## Logo
+
+Put the logo at `public/logo.png`. It appears in the header and the footer at 44px tall,
+so a transparent PNG around 400px wide is plenty. Without it, both fall back to the
+company name set in type — which looks deliberate rather than broken, so there's no
+rush.
+
+The CRM already has a copy at `public/logo.png` in the mcon-crm repo if you want the
+same file.
 
 Resize to about 1600px wide before adding them. Phone photos are 4000px and will make
 the pages slow on a hotspot for no visible gain.
