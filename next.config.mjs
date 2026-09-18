@@ -52,10 +52,14 @@ const nextConfig = {
       // Every location landing page folded into its service. The old structure was
       // /areas-of-service/<town>-<service>, so one wildcard catches all 95 rather than
       // listing them — they were templated from the same copy anyway.
-      { source: "/areas-of-service/:slug*", destination: "/", permanent: true },
-      { source: "/services/:slug*", destination: "/", permanent: true },
-      { source: "/construction/:slug*", destination: "/", permanent: true },
-      { source: "/renovations/:slug*", destination: "/renovations", permanent: true },
+      // ":slug+" requires at least one path segment. With ":slug*" the pattern also
+      // matches the bare path, so "/renovations" matched its own rule and redirected to
+      // itself — an infinite loop that took the page down entirely. The others were
+      // harmless only because their destination happened to differ from their source.
+      { source: "/areas-of-service/:slug+", destination: "/", permanent: true },
+      { source: "/services/:slug+", destination: "/", permanent: true },
+      { source: "/construction/:slug+", destination: "/", permanent: true },
+      { source: "/renovations/:slug+", destination: "/renovations", permanent: true },
     ];
   },
 };
