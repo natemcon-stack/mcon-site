@@ -42,7 +42,7 @@ export default function Page() {
         <li>Hazardous materials testing, based on the age of your home — required for anything built before 1994</li>
         <li>Demolition and framing</li>
         <li>Subtrades: plumbing, electrical and HVAC</li>
-        <li>Permitting</li>
+        <li>Permitting and inspection coordination</li>
         <li>Flooring, cabinets and countertops</li>
         <li>Down to the last piece of trim and the final paint touch-up</li>
       </ul>

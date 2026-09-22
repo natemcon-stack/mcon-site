@@ -1,6 +1,7 @@
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CallBar from "@/components/CallBar";
 
 export const metadata = {
   metadataBase: new URL("https://mconenterprisesinc.ca"),
@@ -53,7 +54,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="font-body">
+      <body className="font-body pb-14 sm:pb-0">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:m-3 focus:bg-ink focus:text-paper focus:px-3 focus:py-2"
@@ -63,6 +64,7 @@ export default function RootLayout({ children }) {
         <Nav />
         <main id="main">{children}</main>
         <Footer />
+        <CallBar />
       </body>
     </html>
   );

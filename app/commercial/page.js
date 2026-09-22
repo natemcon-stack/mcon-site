@@ -25,7 +25,7 @@ export default function Page() {
             "An ownership changeover at a nationwide franchise. When owners change, corporate makes sure the building is up to par — we met their representative, went through the deficiency list, and once approved, completed all of it. Replacing ceiling tiles, evaluating emergency exits for functionality, replacing siding, exterior cleaning, prep and painting, and bollard painting.",
         },
       ]}
-      rates={[{ label: "Commercial labour", value: "$110 per man hour" }]}
+      rates={[{ label: "Commercial labour, based on", value: "$110 per man hour" }]}
     >
       <p>
         We work with the city on permitting and development applications, and with
@@ -43,6 +43,10 @@ export default function Page() {
         We carry a $5 million liability policy and up-to-date WorkSafeBC coverage.
       </p>
 
+      <p>
+        Commercial labour is based on $110 per man hour, but wherever the scope is known
+        we&apos;d rather give you a firm quote.
+      </p>
       <p>
         Whether your commercial space is in Powell River or not, we&apos;re happy to help
         &mdash; our rollout work takes us all across the province.

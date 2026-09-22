@@ -11,7 +11,7 @@ export default function Nav() {
 
   return (
     <header className="border-b border-rule bg-paper">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-5 sm:py-4">
         <Link href="/" aria-label="M-CON Enterprises Inc. home">
           <Logo />
         </Link>
@@ -31,7 +31,12 @@ export default function Nav() {
             <Link href="/contact" className="font-display hover:text-red">Contact</Link>
           </nav>
 
-          <a href={PHONE_HREF} className="font-display text-sm font-600 text-red hover:text-red-dark">
+          {/* The number is the primary action on a trade site, so it stays visible at
+              every width — but it needs a real tap target, not just small text. */}
+          <a
+            href={PHONE_HREF}
+            className="-mx-2 whitespace-nowrap px-2 py-2 font-display text-sm font-600 text-red hover:text-red-dark"
+          >
             {PHONE}
           </a>
 
@@ -39,7 +44,7 @@ export default function Nav() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label="Menu"
-            className="font-display text-sm md:hidden"
+            className="-mr-2 px-2 py-2 font-display text-sm md:hidden"
           >
             {open ? "Close" : "Menu"}
           </button>

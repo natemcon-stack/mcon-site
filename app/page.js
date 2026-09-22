@@ -14,10 +14,9 @@ export default function Home() {
   return (
     <>
       <section className="mx-auto max-w-5xl px-5 pt-14 pb-16 sm:pt-20">
-        <h1 className="font-display text-[2.6rem] font-700 leading-[0.98] sm:text-6xl">
+        <h1 className="font-display text-[2rem] font-700 leading-[1.02] xs:text-[2.4rem] sm:text-5xl sm:leading-[0.98] lg:text-6xl">
           We renovate, we build,
-          <br />
-          we restore.
+          <br className="hidden sm:inline" /> we restore.
         </h1>
 
         <p className="mt-7 max-w-prose text-lg leading-relaxed">
@@ -32,20 +31,20 @@ export default function Home() {
           <h2 className="font-display text-sm font-600 text-cedar">What we charge</h2>
           <dl className="mt-3">
             {RATES.map((r) => (
-              <div key={r.label} className="rule-item flex items-baseline justify-between gap-6 py-3">
+              <div key={r.label} className="rule-item flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                 <dt className="text-base">{r.label}</dt>
-                <dd className="figures shrink-0 text-right">
+                <dd className="figures shrink-0 sm:text-right">
                   <span className="font-display text-xl font-700">{r.value}</span>
                   <span className="ml-2 text-sm text-cedar">{r.unit}</span>
                 </dd>
               </div>
             ))}
-            <div className="rule-total flex items-baseline justify-between gap-6 pt-3">
+            <div className="rule-total flex flex-col gap-1 pt-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
               <dt className="text-base">
                 Materials, subtrades, engineers, dump fees, permits, architects and
                 miscellaneous expenses
               </dt>
-              <dd className="figures shrink-0 text-right">
+              <dd className="figures shrink-0 sm:text-right">
                 <span className="font-display text-xl font-700">+20%</span>
               </dd>
             </div>
@@ -158,7 +157,7 @@ export default function Home() {
             <h2 className="font-display text-2xl font-700">Out-of-town quotes</h2>
             <dl className="mt-4 max-w-sm">
               {QUOTE_FEES.map((q) => (
-                <div key={q.label} className="rule-item flex items-baseline justify-between gap-6 py-3">
+                <div key={q.label} className="rule-item flex items-baseline justify-between gap-4 py-3">
                   <dt>{q.label}</dt>
                   <dd className="figures font-display font-600">{q.value}</dd>
                 </div>

@@ -11,7 +11,7 @@ export default function Logo({ className = "" }) {
 
   if (failed) {
     return (
-      <span className={`font-display text-lg font-700 leading-none tracking-tight ${className}`}>
+      <span className={`font-display text-base font-700 leading-none tracking-tight sm:text-lg ${className}`}>
         M-CON <span className="text-red">Enterprises Inc.</span>
       </span>
     );
@@ -23,7 +23,7 @@ export default function Logo({ className = "" }) {
       src="/logo.png"
       alt="M-CON Enterprises Inc."
       onError={() => setFailed(true)}
-      className={`h-11 w-auto ${className}`}
+      className={`h-9 w-auto sm:h-11 ${className}`}
     />
   );
 }

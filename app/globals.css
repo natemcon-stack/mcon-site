@@ -6,8 +6,14 @@
    Figures align on a decimal column the way they do on an invoice, which is what makes
    the published rates read as a working document rather than as marketing. */
 
+html {
+  /* Nothing should ever scroll sideways on a phone. */
+  overflow-x: hidden;
+}
+
 body {
   background: #FBFBFA;
+  overflow-x: hidden;
   color: #1E282C;
   -webkit-font-smoothing: antialiased;
 }
@@ -22,6 +28,9 @@ h1, h2, h3 {
 .rule-item { border-bottom: 1px solid #C9CFCE; }
 .rule-total { border-top: 2px solid #1E282C; }
 .figures { font-variant-numeric: tabular-nums; }
+
+/* Email addresses and long unbroken strings break rather than widen the page. */
+p, dd, dt, li, figcaption { overflow-wrap: break-word; }
 
 a:focus-visible, button:focus-visible, input:focus-visible,
 textarea:focus-visible, select:focus-visible {

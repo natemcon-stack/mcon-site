@@ -2,6 +2,12 @@
 module.exports = {
   content: ["./app/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   theme: {
+    screens: {
+      // A breakpoint for the narrowest phones still in use, so the headline and rate
+      // card can step up before the 640px default.
+      xs: '400px',
+      sm: '640px', md: '768px', lg: '1024px', xl: '1280px',
+    },
     extend: {
       colors: {
         // Drawn from the existing M-CON logo and the materials of the work itself,

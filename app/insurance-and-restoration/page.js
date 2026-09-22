@@ -84,6 +84,18 @@ export default function Page() {
         before you get to that point.
       </p>
 
+      <h2>Why the drywall is still up in these photos</h2>
+      <p>
+        Normally the drywall comes out two feet up as part of a flood cut. Here we
+        suspected the home contained asbestos, so nothing was cut until the test results
+        came back. Instead we dried everything out thoroughly in the meantime, which stops
+        mold starting while you wait.
+      </p>
+      <p>
+        It&apos;s slower. It&apos;s also the difference between a controlled abatement and
+        disturbing asbestos through a whole house.
+      </p>
+
       <h2>If you have a flood</h2>
       <p>
         <strong>Contact your insurance provider immediately.</strong> They&apos;ll send an

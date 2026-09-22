@@ -65,22 +65,6 @@ const FAQS = [
     ),
   },
   {
-    q: "What should I check before hiring any contractor?",
-    a: (
-      <>
-        <p>
-          Ask for three things, from us or anyone else: a WorkSafeBC clearance letter,
-          proof of insurance, and a business licence.
-        </p>
-        <p>
-          If a contractor doesn&apos;t have them, they aren&apos;t in a position to stand
-          behind their work. It isn&apos;t a matter of goodwill — without coverage, there
-          is nothing to draw on if something goes wrong on your property.
-        </p>
-      </>
-    ),
-  },
-  {
     q: "Do you do roofing?",
     a: (
       <p>
@@ -239,21 +223,6 @@ const FAQS = [
         A deposit is taken at the start of your project and applied to your final weekly
         invoice. Anything left over is refunded to you promptly.
       </p>
-    ),
-  },
-  {
-    q: "Do you do cash jobs?",
-    a: (
-      <>
-        <p>
-          We accept cash as legal tender, but your method of payment won&apos;t change the
-          price of your project. We pay our taxes.
-        </p>
-        <p>
-          The way we see it: if a contractor is willing to cheat the government,
-          what&apos;s to stop them acting dishonourably with their clients?
-        </p>
-      </>
     ),
   },
   {

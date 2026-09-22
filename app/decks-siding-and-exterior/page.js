@@ -26,9 +26,9 @@ export default function Page() {
         },
         {
           src: "/images/deck-3.jpg",
-          alt: "A post and beam deck cover with black-stained timbers looking out over the water",
+          alt: "A post and beam deck cover with black-stained timbers at Tla'amin Nation",
           caption:
-            "A post and beam deck cover at Northside. Frost-protected heavy-pour concrete footings to stand up to the ocean winds, metal roofing above, and every piece of lumber pre-painted before it went up so the finish is flawless with no raw edges hiding in the joints.",
+            "A post and beam deck cover at Tla'amin Nation. Frost-protected heavy-pour concrete footings to stand up to the ocean winds, metal roofing above, and every piece of lumber pre-painted before it went up so the finish is flawless with no raw edges hiding in the joints.",
         },
         {
           src: "/images/siding-1.jpg",
