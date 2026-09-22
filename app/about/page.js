@@ -13,8 +13,14 @@ export default function Page() {
 
       <div className="mt-8 max-w-prose space-y-5 text-lg leading-relaxed">
         <p>
-          We started in 2015 as Muth Construction. When we incorporated in 2024 we wanted
-          a name that was easier to say — M-CON is what was left.
+          We started in the Lower Mainland in 2015 as Muth Construction. In 2019 we moved
+          to the Cariboo, where the business really got into full swing, and we&apos;ve
+          since brought it to the Upper Sunshine Coast. When we incorporated in 2024 we
+          wanted a name that was easier to say — M-CON is what was left.
+        </p>
+        <p>
+          Some of the projects we&apos;re proudest of are from the Cariboo, so you&apos;ll
+          see them in our work alongside jobs closer to home.
         </p>
         <p>
           M-CON Enterprises Inc. is run by our founder Nate Muth, a red seal carpenter by

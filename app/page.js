@@ -73,9 +73,9 @@ export default function Home() {
           evidence behind it rather than a decorative header image. */}
       <section className="mx-auto max-w-5xl px-5 pb-4">
         <div className="grid gap-4 sm:grid-cols-3">
-          <Photo src="/images/home-1.jpg" alt="A finished home with new siding and stone facing in Powell River" />
-          <Photo src="/images/home-2.jpg" alt="A renovated kitchen with navy cabinets and a stone island" />
-          <Photo src="/images/home-3.jpg" alt="A timber-framed pavilion under construction, showing exposed beams" />
+          <Photo src="/images/home-1.jpg" alt="A Williams Lake home after a full exterior upgrade, with Hardie board siding, stone veneer and a new covered walkway" />
+          <Photo src="/images/home-2.jpg" alt="A renovated kitchen with navy cabinets, quartz counters and an island sink" />
+          <Photo src="/images/home-3.jpg" alt="A custom greenhouse and she-shed under construction at Chimney Lake" />
         </div>
       </section>
 
@@ -127,6 +127,29 @@ export default function Home() {
               <p>
                 A deposit is taken at the start of your project and applied to your final
                 weekly invoice. Anything left over is refunded to you promptly.
+              </p>
+              <p>
+                We prefer payment by e-transfer, cheque or bank draft. Credit cards are
+                also accepted through our online invoicing system.
+              </p>
+
+              <h3 className="font-display text-lg font-600 pt-2">A word about getting quotes</h3>
+              <p>
+                On one job, the homeowners told us upfront what other contractors had
+                quoted. We knew the square footage, ran our own square-foot price, and it
+                came to roughly $20,000 less than the next lowest bid. That&apos;s what we
+                quoted, and that&apos;s what we charged.
+              </p>
+              <p>
+                We appreciate a candid conversation &mdash; but when you&apos;re getting
+                prices from contractors, keep the other numbers to yourself. It would have
+                been easy for someone less scrupulous to quote just under the next bid and
+                pocket the difference.
+              </p>
+              <p>
+                Once you have a price, though, speak up. If it&apos;s outside your budget,
+                ask what can be done within it. We&apos;re happy to reduce scope or find
+                savings so you can still get your project done.
               </p>
             </div>
           </div>

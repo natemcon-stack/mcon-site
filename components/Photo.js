@@ -21,7 +21,9 @@ export default function Photo({ src, alt, caption }) {
         onError={() => setFailed(true)}
         className="w-full border border-rule bg-concrete object-cover"
       />
-      {caption && <figcaption className="mt-2 text-sm text-cedar">{caption}</figcaption>}
+      {caption && (
+        <figcaption className="mt-2 text-sm leading-relaxed text-ink/70">{caption}</figcaption>
+      )}
     </figure>
   );
 }

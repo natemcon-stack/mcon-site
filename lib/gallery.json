@@ -3,32 +3,29 @@
   "group": "Kitchens and interiors",
   "photos": [
    {
-    "src": "/images/gallery/g01.jpg",
-    "alt": "Kitchen with a cedar ceiling and full-height cabinets"
-   },
-   {
-    "src": "/images/gallery/g02.jpg",
-    "alt": "Kitchen with white cabinets and dark counters"
-   },
-   {
-    "src": "/images/gallery/g03.jpg",
-    "alt": "A contemporary home with glass and angled rooflines"
-   },
-   {
-    "src": "/images/gallery/g04.jpg",
-    "alt": "A garage being sided"
-   },
-   {
     "src": "/images/gallery/g05.jpg",
-    "alt": "A room finished with a wood feature wall"
+    "alt": "A repainted room with a stained shiplap accent wall in a Williams Lake mobile home",
+    "caption": "A full repaint in a Williams Lake mobile home. We sprayed ceilings, walls, doors and trim in a high-hide primer to seal in years of candle smoke, which brightened the whole place up. Then the client's choice of wall colour, vinyl plank flooring, and a stained shiplap accent wall."
    },
    {
     "src": "/images/gallery/g06.jpg",
-    "alt": "Open-plan interior with a wood ceiling"
+    "alt": "New flooring through an off-grid cabin at Pyper Lake",
+    "caption": "A tricky one. This off-grid cabin at Pyper Lake in the Chilcotin sees -40 in winter and high 90s in summer, with no steady temperature inside when the owner is away. Most flooring moves significantly across that range, so we searched out a product that would hold up. It has, thanks to meticulous prep, floor levelling and proper expansion gaps."
    },
    {
-    "src": "/images/gallery/g07.jpg",
-    "alt": "A bar area with navy cabinets beneath a curved staircase"
+    "src": "/images/gallery/g21.jpg",
+    "alt": "A navy kitchen with undermount sinks in quartz counters",
+    "caption": "The navy kitchen north of Powell River from the other side, showing the undermount sinks in the new quartz counters."
+   },
+   {
+    "src": "/images/gallery/g27.jpg",
+    "alt": "A rental property repainted throughout after tenant damage",
+    "caption": "A rental property that had been severely abused by tenants — graffiti and extensive wall damage. This one was mostly prep: drywall repairs, cleaning, and multiple coats of high-hide primer, with the kitchen, windows, doors, railings and flooring all masked off. We painted ceilings and walls and inside the closets, everything we could reach, to eliminate odours and undo years of damage. It ended up bright and sunny, and in a state the landlord could look at with pride again."
+   },
+   {
+    "src": "/images/gallery/g28.jpg",
+    "alt": "A kitchenette built into the space beneath a curved staircase",
+    "caption": "A kitchenette built beneath the curved staircase at the Northside home. This was extra work the homeowner added after the insurance portion was complete, to accommodate aging family — the counter follows the curve of the stair, with a beverage fridge, dishwasher and sink in a space that had been doing nothing."
    }
   ]
  },
@@ -36,40 +33,64 @@
   "group": "Decks, siding and exterior",
   "photos": [
    {
-    "src": "/images/gallery/g08.jpg",
-    "alt": "A deck with a dark horizontal railing at sunset"
-   },
-   {
-    "src": "/images/gallery/g09.jpg",
-    "alt": "A covered deck with a dark ceiling"
-   },
-   {
-    "src": "/images/gallery/g10.jpg",
-    "alt": "A wrap-around deck alongside a finished house"
-   },
-   {
-    "src": "/images/gallery/g11.jpg",
-    "alt": "Deck boards going down at sunset"
-   },
-   {
-    "src": "/images/gallery/g12.jpg",
-    "alt": "A deck and carport under construction"
-   },
-   {
-    "src": "/images/gallery/g13.jpg",
-    "alt": "Dark metal siding detail"
-   },
-   {
-    "src": "/images/gallery/g14.jpg",
-    "alt": "A new cedar fence"
-   },
-   {
-    "src": "/images/gallery/g15.jpg",
-    "alt": "A house with a carport and new railings"
+    "src": "/images/gallery/g01.jpg",
+    "alt": "A covered entry deck and stair on a rebuilt 1930s house",
+    "caption": "The covered entry deck at the 1930s Powell River house we rebuilt. Pressure treated on frost-protected footings, solid framing, functional railings, built to code and built to last."
    },
    {
     "src": "/images/gallery/g16.jpg",
-    "alt": "Deck framing and joists"
+    "alt": "Deck framing on footings with galvanized post bases",
+    "caption": "Framing for the Westview deck. Joists and beam on frost-protected footings with galvanized post bases, with the house wrapped and new windows in."
+   },
+   {
+    "src": "/images/gallery/g11.jpg",
+    "alt": "Deck boards down at sunset before the railing went in",
+    "caption": "The Westview deck during framing, before the black panelling went into the railing."
+   },
+   {
+    "src": "/images/gallery/g08.jpg",
+    "alt": "A deck railing with black corrugated metal panel infill at sunset",
+    "caption": "A deck we built in Westview from the ground up — footings, framing, decking and railing. The client wanted black corrugated metal panelling for the infill. We capped the rail with a 2x10, so you can set a dinner plate down without balancing it precariously, and it stiffens the whole railing."
+   },
+   {
+    "src": "/images/gallery/g09.jpg",
+    "alt": "A covered deck stained in seafoam with red chairs",
+    "caption": "The same Westview property as the red garage doors — after the EIFS repairs and exterior colour change, they had us back for the decks. We painted and stained throughout: ceiling, walls and decking."
+   },
+   {
+    "src": "/images/gallery/g02.jpg",
+    "alt": "A contemporary home with red garage doors after an exterior colour change",
+    "caption": "A colour change to the full exterior of this Westview home. We were contacted by the realtors after a home inspection flagged small cracks in the EIFS — exterior insulation and finishing system. We investigated to confirm the cracks weren't letting water in, sealed them, corrected the texture in those areas, and recoated the whole exterior. These are the same clients who had us back a year later to refinish their decks."
+   },
+   {
+    "src": "/images/gallery/g03.jpg",
+    "alt": "The same home from below after the exterior colour change",
+    "caption": "The same Westview home from below, after the full exterior colour change. The decks we refinished a year later are on the upper level."
+   },
+   {
+    "src": "/images/gallery/g15.jpg",
+    "alt": "A home with cedar shake gables and stucco painted by brush",
+    "caption": "Carport posts that had begun to bow, replaced with structural timbers, beam ends recapped, cedar shakes stained and installed on the gables, and the stucco painted entirely by brush."
+   },
+   {
+    "src": "/images/gallery/g10.jpg",
+    "alt": "Hardie board going on over new building wrap in Williams Lake",
+    "caption": "The Williams Lake exterior in progress. Hardie board going up, and the newly shingled roof over the covered walkway we built where a narrow walkway-style deck had been removed."
+   },
+   {
+    "src": "/images/gallery/g04.jpg",
+    "alt": "Rigid insulation and a new door on a wall rebuilt after a car struck the house",
+    "caption": "An insurance claim in Powell River after a car rolled down the hill into the house and damaged the stucco. We had the stucco tested for asbestos, which came back clean, then removed the damaged siding and sheathing, replaced the sheathing with plywood and corrected rot as we found it. The client took the opportunity to upgrade the insulation while the wall was open, fitted a new door outside the scope of the claim, and switched this wall from dated stucco to vinyl siding, with plans to carry it around the rest of the house."
+   },
+   {
+    "src": "/images/gallery/g14.jpg",
+    "alt": "A fence re-faced in pressure-treated boards with new gates",
+    "caption": "New pressure-treated facing over an existing fence at 150 Mile House, with new structural gates."
+   },
+   {
+    "src": "/images/gallery/g24.jpg",
+    "alt": "A European gutter system and downpipe on an older home",
+    "caption": "A European gutter system and downpipe fitted to a Black Point home."
    }
   ]
  },
@@ -78,23 +99,23 @@
   "photos": [
    {
     "src": "/images/gallery/g17.jpg",
-    "alt": "A new shop framed on its concrete foundation"
+    "alt": "A barn framed in rough-cut fir with walls up and braced",
+    "caption": "The Cariboo barn with its walls up and braced, framed in rough-cut fir the owner supplied from Toosey Old School, a mill west of Williams Lake. He helped us stand the first wall himself."
    },
    {
     "src": "/images/gallery/g18.jpg",
-    "alt": "A house framed and wrapped in winter"
+    "alt": "A rancher framed, wrapped and roofed in deep snow",
+    "caption": "A rancher on a crawlspace at 108 Mile Ranch. We framed and wrapped it, landed the trusses, sheeted the roof and passed framing inspection before handing off to the general contractor. This one had weather delays — we tapped out on the framing at minus thirty."
    },
    {
     "src": "/images/gallery/g19.jpg",
-    "alt": "A barn and carport before restoration"
+    "alt": "An old equipment shed with a sagging roofline, before repair",
+    "caption": "An equipment shed in the Cariboo that had seen too many winters, with carpenter ants in the posts."
    },
    {
     "src": "/images/gallery/g20.jpg",
-    "alt": "The same barn and carport afterwards"
-   },
-   {
-    "src": "/images/gallery/g21.jpg",
-    "alt": "A finished kitchen in a completed build"
+    "alt": "The same equipment shed with its roofline jacked back to level",
+    "caption": "We braced the openings, jacked the roofline back to straight, and made permanent adjustments to the framing to hold it level for the rest of the structure's lifespan. Not everything needs to be torn down — sometimes a structure just needs a little help in its sunset years."
    }
   ]
  },
@@ -103,7 +124,8 @@
   "photos": [
    {
     "src": "/images/gallery/g22.jpg",
-    "alt": "A finished concrete slab"
+    "alt": "A poured slab and formed walkway with post saddles set",
+    "caption": "The interior slab for the Chimney Lake greenhouse, with the walkway poured between drainage gravel and finished to a smooth sealed surface at the owner's request. The saddles are set and ready for standing the 6x6 posts, sitting on frost-protected footings 42 inches below grade. This was a two-stage pour — footings first, then final grading, appropriate substrate, rebar tied, and isolation insulation so the slab can move independently of the structure."
    }
   ]
  },
@@ -111,12 +133,19 @@
   "group": "Roofing",
   "photos": [
    {
-    "src": "/images/gallery/g23.jpg",
-    "alt": "Metal roofing on a shop building"
+    "src": "/images/gallery/g12.jpg",
+    "alt": "A large deck cover framed over an existing deck",
+    "caption": "The Miocene deck cover mid-build, before the Galvalume roofing. Built over the existing deck and mobile home, with headroom and snow load driving the design."
    },
    {
-    "src": "/images/gallery/g24.jpg",
-    "alt": "Roofing and gutter detail"
+    "src": "/images/gallery/g23.jpg",
+    "alt": "A Galvalume deck cover seen from the adjacent roof",
+    "caption": "The Miocene deck cover from the other end, roofed in Galvalume. Sixty-three feet by twenty, built over the existing deck."
+   },
+   {
+    "src": "/images/gallery/g13.jpg",
+    "alt": "Black metal roofing on a post and beam deck cover above the water",
+    "caption": "The Northside deck cover from above. Black metal roofing over the post and beam structure, looking out to the water."
    }
   ]
  },
@@ -125,15 +154,13 @@
   "photos": [
    {
     "src": "/images/gallery/g25.jpg",
-    "alt": "Water across a hallway floor after a flood"
+    "alt": "Flood water across a hallway floor",
+    "caption": "Water across the hallway the night of the Westview flood."
    },
    {
     "src": "/images/gallery/g26.jpg",
-    "alt": "Flooring removed during drying"
-   },
-   {
-    "src": "/images/gallery/g27.jpg",
-    "alt": "A room stripped back during restoration"
+    "alt": "Vinyl plank lifted with an air mover running",
+    "caption": "Vinyl plank lifted at the Westview flood. Category 3 water means anything porous it touched has to be removed. Underneath you can see old glue-down tiles that another restoration company left in place during a previous flood rebuild — we had them tested for hazardous materials and removed them."
    }
   ]
  },
@@ -141,24 +168,24 @@
   "group": "Commercial and rollout work",
   "photos": [
    {
-    "src": "/images/gallery/g28.jpg",
-    "alt": "Commercial exterior work at a retail store"
-   },
-   {
     "src": "/images/gallery/g29.jpg",
-    "alt": "Tesla Supercharger stations at night"
+    "alt": "Supercharger stalls at night with the bollards removed and concrete patched",
+    "caption": "A Supercharger site at night with the bollards removed and the concrete patched. Working into the evening was routine on this one — 25 sites across 23 cities in 14 days, before the end of December."
    },
    {
     "src": "/images/gallery/g30.jpg",
-    "alt": "Bollard detail at a Supercharger station"
+    "alt": "A Supercharger stall with its red bollards still in place",
+    "caption": "One of the stalls before the work, with the bollards still standing. These are quarter-inch steel wall pipe set in concrete — each one cut out, hauled away and the concrete patched behind us."
    },
    {
     "src": "/images/gallery/g31.jpg",
-    "alt": "A television display build in progress"
+    "alt": "A television display build in progress with the ceiling open",
+    "caption": "An LG display build in progress. Structure and integrated lighting in, wiring run above the ceiling, before the televisions went on."
    },
    {
     "src": "/images/gallery/g32.jpg",
-    "alt": "Display shelving under construction"
+    "alt": "A completed television display build awaiting its screens",
+    "caption": "A completed display build in another store. Same specification, city after city — that repeatability is the point of rollout work."
    }
   ]
  }

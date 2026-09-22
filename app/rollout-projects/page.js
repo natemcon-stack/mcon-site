@@ -3,7 +3,7 @@ import ServicePage from "@/components/ServicePage";
 export const metadata = {
   title: "Rollout and multi-site projects across British Columbia",
   description:
-    "The same task at twenty sites, on a schedule. Display installs, bollard cutting, wheel stop removal and graffiti removal for national and provincial programs.",
+    "25 sites across 23 BC cities in 14 days. Bollard and wheel stop removal, display installs and multi-site programs for national and provincial clients.",
 };
 
 export default function Page() {
@@ -12,11 +12,48 @@ export default function Page() {
       title="Rollout and multi-site work"
       lede="Some jobs aren't one site — they're the same task at twenty, on a schedule, done the same way each time."
       photos={[
-        { src: "/images/rollout-1.jpg", alt: "Bollard and wheel stop work at a Tesla Supercharger station" },
-        { src: "/images/rollout-2.jpg", alt: "A completed television display installation" },
+        {
+          src: "/images/rollout-1.jpg",
+          alt: "Tesla Supercharger stalls taped off during province-wide bollard removal",
+          caption:
+            "Bollard and wheel stop removal at Tesla Supercharger stations across British Columbia.",
+        },
+        {
+          src: "/images/rollout-2.jpg",
+          alt: "A completed LG television display wall with integrated lighting",
+          caption:
+            "One of the completed display installs from the Cariboo rollout. Assembled and installed to the corporate specification, in multiple cities across the region.",
+        },
       ]}
     >
-      <p>We take on rollout work throughout the province. Recent projects:</p>
+      <h2>25 sites, 23 cities, 14 days</h2>
+      <p>
+        We were contacted in late autumn to remove bollards and wheel stops at Tesla
+        Supercharger stations across British Columbia. Some stations had already been
+        awarded to other contractors; we did most of them.
+      </p>
+      <p>
+        Twenty-five sites in twenty-three cities. 258 bollards and wheel stops &mdash;
+        most set in poured concrete, the rest bolted down.
+      </p>
+      <p>
+        Cache Creek, Chilliwack, Delta, Hope, Kamloops, Langley, Maple Ridge, Merritt,
+        Nanaimo, Osoyoos, Penticton, Port Alberni, Prince George, Princeton, Quesnel,
+        Revelstoke, Salmon Arm, Sechelt, Squamish, Surrey, Vernon, West Kelowna and
+        Williams Lake.
+      </p>
+      <p>
+        The work meant cutting through quarter-inch steel wall pipe, breaking off the
+        concrete, hauling the bollards to recycling stations and landfills along the
+        route, and patching the concrete behind us. All of it in rain and snow, all of it
+        before the end of December.
+      </p>
+      <p>
+        We sent a small team. They finished ahead of schedule, safely, and to the
+        client&apos;s satisfaction.
+      </p>
+
+      <p>Other rollout work we&apos;ve taken on:</p>
       <ul>
         <li>Display stand assemblies for new televisions across multiple retail locations</li>
         <li>Cutting down bollards and removing wheel stops at Tesla Supercharger stations</li>

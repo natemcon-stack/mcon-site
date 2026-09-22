@@ -15,9 +15,12 @@ export default function Page() {
     <div className="mx-auto max-w-5xl px-5 py-14">
       <h1 className="font-display text-4xl font-700 sm:text-5xl">Our work</h1>
       <p className="mt-5 max-w-prose text-lg leading-relaxed">
-        {GALLERY_COUNT} photographs from jobs across Powell River, the qathet region and
-        the surrounding islands. All of them are our own work — there are no stock photos
-        on this site.
+        {GALLERY_COUNT} photographs of our own work. There are no stock photos on this
+        site.
+      </p>
+      <p className="mt-3 max-w-prose text-base leading-relaxed text-ink/80">
+        Some of these photos are from our years in the Cariboo Region. Some are from
+        rollout work throughout the province.
       </p>
 
       {GALLERY_GROUPS.map((group) => (
@@ -25,7 +28,7 @@ export default function Page() {
           <h2 className="font-display text-2xl font-700">{group.group}</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {group.photos.map((p) => (
-              <Photo key={p.src} src={p.src} alt={p.alt} caption={p.alt} />
+              <Photo key={p.src} src={p.src} alt={p.alt} caption={p.caption} />
             ))}
           </div>
         </section>

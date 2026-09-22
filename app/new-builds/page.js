@@ -12,10 +12,18 @@ export default function Page() {
       title="Carports, garages and auxiliary structures"
       lede="We build carports, garages, barns, shops and other auxiliary structures."
       photos={[
-        { src: "/images/new-build-1.jpg", alt: "A garage framed and sheathed in winter" },
-        { src: "/images/new-build-2.jpg", alt: "A garden shed with timber posts and a metal roof" },
-        { src: "/images/new-build-3.jpg", alt: "A barn and carport before restoration work began" },
-        { src: "/images/new-build-4.jpg", alt: "The same barn and carport after restoration" },
+        {
+          src: "/images/new-build-1.jpg",
+          alt: "A large shop framed and sheathed in winter at Lac La Hache",
+          caption:
+            "A large shop at Lac La Hache, framed under snow. Twelve-foot walls, room trusses, and a deep lean-to off the far side for equipment and trailer parking, spanned with TJI joists as rafters. We came in as the framing contractor on this one; the general contractor had the foundation poured well before the snow flew. We don't enjoy working at minus twenty, but if that's what the job needs, it gets done.",
+        },
+        {
+          src: "/images/new-build-2.jpg",
+          alt: "A gambrel-roofed garden shed with a green metal roof and an open lean-to",
+          caption:
+            "A labour of love, this one. It's in Maple Ridge, on the property our founder grew up on — his mother had been mentioning the need for a new garden shed for years. While they were away we demolished the old rotting one and built her the shed she'd been describing: ten-foot walls, and a footprint sized to stay inside local permitting requirements. The gambrel roof was a first for us and a good challenge. The lean-to was an afterthought, and turned out to be the perfect spot for Grandpa's tractor.",
+        },
       ]}
     >
       <h2>New homes</h2>

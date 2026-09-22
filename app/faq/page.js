@@ -194,12 +194,42 @@ const FAQS = [
     ),
   },
   {
-    q: "Do I need to supply materials?",
+    q: "Do you work as a subcontractor for other contractors?",
+    a: (
+      <>
+        <p>
+          Yes. We&apos;ve framed for general contractors on projects where framing was all
+          they needed from us &mdash; walls, trusses, roof sheeting, through framing
+          inspection and handed off.
+        </p>
+        <p>If you&apos;re a GC looking for a framing crew, get in touch.</p>
+      </>
+    ),
+  },
+  {
+    q: "Do you bring your own equipment?",
     a: (
       <p>
-        No. We supply our own, so the right materials go into your project and no time is
-        lost to duplicated effort or procurement delays.
+        Sometimes. It depends on whether what we own will do the job cost-efficiently for
+        you. If it won&apos;t, we bring in rentals rather than making our machine fit the
+        work.
       </p>
+    ),
+  },
+  {
+    q: "Do I need to supply materials?",
+    a: (
+      <>
+        <p>
+          No &mdash; we supply our own, so the right materials go into your project and no
+          time is lost to duplicated effort or procurement delays.
+        </p>
+        <p>
+          That said, if there&apos;s something specific you want used &mdash; an antique
+          transom window, a vintage farmhouse sink, lumber from a local mill &mdash;
+          we&apos;re happy to work with what you have.
+        </p>
+      </>
     ),
   },
   {
