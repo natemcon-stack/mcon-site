@@ -1,178 +1,217 @@
+"use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { SERVICES, RATES, QUOTE_FEES, PHONE, PHONE_HREF } from "@/lib/services";
-import Photo from "@/components/Photo";
+import AuthGate from "@/components/AuthGate";
+import Nav from "@/components/Nav";
+import { useProfile } from "@/lib/useProfile";
+import { supabase } from "@/lib/supabase/client";
 
-// The hero is the rate card.
-//
-// Every contractor site in the country opens with a photograph of a finished deck and a
-// sentence about quality craftsmanship. Leading with published prices instead does two
-// useful things: it's the genuinely unusual fact about how this business works, and it
-// filters out the people who were never going to pay these rates before they reach the
-// phone.
+const STATUS_STYLES = {
+  active: "bg-success/10 text-success border-success/30",
+  estimate: "bg-warn/10 text-warn border-warn/30",
+  complete: "bg-ink/10 text-ink/60 border-ink/20",
+};
 
-export default function Home() {
+function JobsList() {
+  const { isAdmin } = useProfile();
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("active");
+  const [q, setQ] = useState("");
+  const [selected, setSelected] = useState(new Set());
+
+  useEffect(() => {
+    load();
+  }, []);
+
+  async function load() {
+    setLoading(true);
+    const { data } = await supabase
+      .from("jobs")
+      .select("*, contacts(name)")
+      .order("created_at", { ascending: false });
+    setJobs(data || []);
+    setLoading(false);
+  }
+
+  const filtered = jobs
+    .filter((j) => filter === "all" || j.status === filter)
+    .filter((j) => !q || j.title.toLowerCase().includes(q.toLowerCase()));
+
+  function toggleSelect(id, e) {
+    e.preventDefault();
+    e.stopPropagation();
+    setSelected((s) => {
+      const next = new Set(s);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }
+
+  async function deleteOne(id, e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!confirm("Delete this job and everything under it (hours, expenses, photos, estimates, invoices, work orders)? This can't be undone.")) return;
+    const { error } = await supabase.from("jobs").delete().eq("id", id);
+    if (error) alert(error.message);
+    else load();
+  }
+
+  async function deleteSelected() {
+    if (selected.size === 0) return;
+    if (!confirm(`Delete ${selected.size} selected job(s) and everything under them? This can't be undone.`)) return;
+    const { error } = await supabase.from("jobs").delete().in("id", Array.from(selected));
+    if (error) alert(error.message);
+    else {
+      setSelected(new Set());
+      load();
+    }
+  }
+
   return (
-    <>
-      <section className="mx-auto max-w-5xl px-5 pt-14 pb-16 sm:pt-20">
-        <h1 className="font-display text-[2rem] font-700 leading-[1.02] xs:text-[2.4rem] sm:text-5xl sm:leading-[0.98] lg:text-6xl">
-          We renovate, we build,
-          <br className="hidden sm:inline" /> we restore.
-        </h1>
+    <AuthGate>
+      <Nav />
+      <main className="max-w-5xl mx-auto px-4 py-6">
+        <div className="flex items-center justify-between mb-5">
+          <div>
+            <h1 className="font-display text-2xl font-semibold tracking-wide">Jobs</h1>
+            <p className="text-ink/50 text-sm font-mono">{filtered.length} job{filtered.length !== 1 ? "s" : ""}</p>
+          </div>
+          <Link
+            href="/jobs/new"
+            className="bg-accent hover:bg-accent-dark text-white font-display uppercase text-sm tracking-wide px-4 py-2 rounded"
+          >
+            + New Job
+          </Link>
+        </div>
 
-        <p className="mt-7 max-w-prose text-lg leading-relaxed">
-          M-CON Enterprises Inc. is run by our founder Nate Muth, a red seal carpenter by
-          trade. We work across Powell River, the qathet region and the surrounding
-          islands, and take on remote and rollout projects throughout British Columbia.
-        </p>
+        <input placeholder="Search jobs by title..." value={q} onChange={(e) => setQ(e.target.value)}
+          className="w-full border border-border rounded px-3 py-2 mb-3" />
 
-        {/* Rates set as a quote sheet. The figures align on their own column and the
-            heavier rule above the last row is the one an invoice uses above a total. */}
-        <div className="mt-12 max-w-xl">
-          <h2 className="font-display text-sm font-600 text-cedar">What we charge</h2>
-          <dl className="mt-3">
-            {RATES.map((r) => (
-              <div key={r.label} className="rule-item flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-                <dt className="text-base">{r.label}</dt>
-                <dd className="figures shrink-0 sm:text-right">
-                  <span className="font-display text-xl font-700">{r.value}</span>
-                  <span className="ml-2 text-sm text-cedar">{r.unit}</span>
-                </dd>
+        {isAdmin && selected.size > 0 && (
+          <div className="flex items-center justify-between bg-accent/10 border border-accent/30 rounded-lg px-4 py-2 mb-3">
+            <span className="text-sm">{selected.size} selected</span>
+            <button onClick={deleteSelected}
+              className="text-xs font-display uppercase tracking-wide text-accent-dark border border-accent-dark/40 rounded px-3 py-1">
+              Delete selected
+            </button>
+          </div>
+        )}
+
+        <div className="flex gap-2 mb-5 font-display text-xs uppercase tracking-wide">
+          {[["active", "Active"], ["estimate", "Estimates"], ["complete", "Completed"]].map(([val, label]) => (
+            <button
+              key={val}
+              onClick={() => setFilter(val)}
+              className={`px-3 py-1.5 rounded border ${
+                filter === val ? "bg-ink text-white border-ink" : "border-border text-ink/60"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {loading ? (
+          <p className="text-ink/40 font-mono text-sm">Loading...</p>
+        ) : filtered.length === 0 ? (
+          <div className="border border-dashed border-border rounded-lg p-10 text-center text-ink/50">
+            No jobs yet. Create one to get started.
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {groupByMonth(filtered).map(([monthLabel, monthJobs]) => (
+              <div key={monthLabel}>
+                <div className="flex items-baseline justify-between mb-2 sticky top-14 bg-paper py-1 z-10">
+                  <h2 className="font-display uppercase text-sm tracking-wide text-ink/60">{monthLabel}</h2>
+                  <span className="text-xs text-ink/35 font-mono">{monthJobs.length}</span>
+                </div>
+                <div className="space-y-2">
+            {monthJobs.map((job) => (
+              <Link
+                key={job.id}
+                href={`/jobs/${job.id}`}
+                className="tag-notch bg-surface border border-border rounded-md px-4 py-3 hover:border-steel transition-colors block relative"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start gap-2">
+                    {isAdmin && (
+                      <input type="checkbox" checked={selected.has(job.id)}
+                        onClick={(e) => toggleSelect(job.id, e)} onChange={() => {}}
+                        className="mt-1.5" />
+                    )}
+                    <div>
+                      <div className="font-mono text-xs text-ink/40">#{job.job_number}</div>
+                      <div className="font-display font-semibold text-lg leading-tight">{job.title}</div>
+                      <div className="text-sm text-ink/60">{job.contacts?.name || "No contact linked"}</div>
+                      {job.address && <div className="text-xs text-ink/40 mt-1">{job.address}</div>}
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-end gap-1.5">
+                    <span
+                      className={`stamp text-[10px] font-display font-bold uppercase border rounded px-2 py-0.5 whitespace-nowrap ${
+                        STATUS_STYLES[job.status] || STATUS_STYLES.active
+                      }`}
+                    >
+                      {job.status?.replace("_", " ")}
+                    </span>
+                    {isAdmin && (
+                      <button onClick={(e) => deleteOne(job.id, e)} className="text-ink/30 hover:text-accent-dark text-xs">
+                        Delete
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            ))}
+                </div>
               </div>
             ))}
-            <div className="rule-total flex flex-col gap-1 pt-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-              <dt className="text-base">
-                Materials, subtrades, engineers, dump fees, permits, architects and
-                miscellaneous expenses
-              </dt>
-              <dd className="figures shrink-0 sm:text-right">
-                <span className="font-display text-xl font-700">+20%</span>
-              </dd>
-            </div>
-          </dl>
-          <p className="mt-4 text-sm leading-relaxed text-ink/80">
-            Digital copies of receipts are available on request. Where the scope is known
-            we prefer a firm price — what we quote is what we charge.{" "}
-            <Link href="/faq" className="text-red underline hover:text-red-dark">
-              How we bill
-            </Link>
-          </p>
-        </div>
-
-        <p className="mt-10">
-          <a
-            href={PHONE_HREF}
-            className="inline-block bg-red px-6 py-3 font-display text-lg font-600 text-paper hover:bg-red-dark"
-          >
-            Call {PHONE}
-          </a>
-        </p>
-      </section>
-
-      {/* Work, shown after the rates. The rate card is still the hero — these are the
-          evidence behind it rather than a decorative header image. */}
-      <section className="mx-auto max-w-5xl px-5 pb-4">
-        <div className="grid gap-4 sm:grid-cols-3">
-          <Photo src="/images/home-1.jpg" alt="A Williams Lake home after a full exterior upgrade, with Hardie board siding, stone veneer and a new covered walkway" />
-          <Photo src="/images/home-2.jpg" alt="A renovated kitchen with navy cabinets, quartz counters and an island sink" />
-          <Photo src="/images/home-3.jpg" alt="A custom greenhouse and she-shed under construction at Chimney Lake" />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-5xl px-5 pb-12">
-        <a href="/gallery" className="font-display text-red underline hover:text-red-dark">
-          See more of our work
-        </a>
-      </section>
-
-      <section className="border-t border-rule bg-concrete">
-        <div className="mx-auto max-w-5xl px-5 py-16">
-          <h2 className="font-display text-3xl font-700">What we do</h2>
-          <ul className="mt-8 grid gap-x-12 sm:grid-cols-2">
-            {SERVICES.map((s) => (
-              <li key={s.slug} className="rule-item py-4">
-                <Link href={`/${s.slug}`} className="group block">
-                  <span className="font-display text-xl font-600 group-hover:text-red">
-                    {s.title}
-                  </span>
-                  <span className="mt-1 block text-base leading-relaxed text-ink/80">
-                    {s.blurb}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-5xl px-5 py-16">
-        <div className="grid gap-12 sm:grid-cols-2">
-          <div>
-            <h2 className="font-display text-2xl font-700">How we bill</h2>
-            <div className="mt-4 max-w-prose space-y-4 text-base leading-relaxed">
-              <p>
-                How a project is billed depends on the project. Wherever possible we
-                prefer to give firm pricing, so your budget is respected and you know the
-                number before we start.
-              </p>
-              <p>
-                We aren&apos;t the kind of contractors who give unrealistically low
-                pricing to secure a job and then pile on extras once your project is half
-                complete.
-              </p>
-              <p>
-                On hourly and materials contracts we invoice every week, so you can keep
-                track of costs as the work runs rather than finding out at the end.
-              </p>
-              <p>
-                A deposit is taken at the start of your project and applied to your final
-                weekly invoice. Anything left over is refunded to you promptly.
-              </p>
-              <p>
-                We prefer payment by e-transfer, cheque or bank draft. Credit cards are
-                also accepted through our online invoicing system.
-              </p>
-
-              <h3 className="font-display text-lg font-600 pt-2">A word about getting quotes</h3>
-              <p>
-                On one job, the homeowners told us upfront what other contractors had
-                quoted. We knew the square footage, ran our own square-foot price, and it
-                came to roughly $20,000 less than the next lowest bid. That&apos;s what we
-                quoted, and that&apos;s what we charged.
-              </p>
-              <p>
-                We appreciate a candid conversation &mdash; but when you&apos;re getting
-                prices from contractors, keep the other numbers to yourself. It would have
-                been easy for someone less scrupulous to quote just under the next bid and
-                pocket the difference.
-              </p>
-              <p>
-                Once you have a price, though, speak up. If it&apos;s outside your budget,
-                ask what can be done within it. We&apos;re happy to reduce scope or find
-                savings so you can still get your project done.
-              </p>
-            </div>
           </div>
-
-          <div>
-            <h2 className="font-display text-2xl font-700">Out-of-town quotes</h2>
-            <dl className="mt-4 max-w-sm">
-              {QUOTE_FEES.map((q) => (
-                <div key={q.label} className="rule-item flex items-baseline justify-between gap-4 py-3">
-                  <dt>{q.label}</dt>
-                  <dd className="figures font-display font-600">{q.value}</dd>
-                </div>
-              ))}
-            </dl>
-            <p className="mt-4 max-w-prose text-sm leading-relaxed text-ink/80">
-              We supply our own materials, so the right products go into your project and
-              no time is lost to duplicated effort or procurement delays.
-            </p>
-            <p className="mt-6 text-sm text-cedar">
-              $5 million liability insurance · Up-to-date WorkSafeBC coverage
-            </p>
-          </div>
-        </div>
-      </section>
-    </>
+        )}
+      </main>
+    </AuthGate>
   );
+}
+
+// Groups jobs into the month they started, newest first. A job with no start date
+// falls back to when it was created — every job has one of the two, and burying
+// undated jobs in a separate pile at the bottom would hide them.
+function groupByMonth(jobs) {
+  const groups = new Map();
+
+  for (const job of jobs) {
+    const raw = job.start_date || job.created_at;
+    const date = raw ? new Date(raw) : null;
+    const key = date && !Number.isNaN(date.getTime())
+      ? `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`
+      : "unknown";
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(job);
+
+  }
+
+  const label = (key) => {
+    if (key === "unknown") return "No date";
+    // Jobs grouped by created_at rather than a real start date aren't scheduled, so
+    // they never appear on the crew's week. Worth naming rather than hiding.
+    const [year, month] = key.split("-");
+    const d = new Date(Number(year), Number(month) - 1, 1);
+    const thisYear = new Date().getFullYear();
+    // The year is only worth showing when it isn't the current one — "August" reads
+    // better than "August 2026" when everything is 2026.
+    return d.toLocaleDateString(undefined, {
+      month: "long",
+      ...(Number(year) === thisYear ? {} : { year: "numeric" }),
+    });
+  };
+
+  return [...groups.entries()]
+    .sort((a, b) => (a[0] === "unknown" ? 1 : b[0] === "unknown" ? -1 : b[0].localeCompare(a[0])))
+    .map(([key, list]) => [label(key), list]);
+}
+
+export default function Page() {
+  return <JobsList />;
 }
