@@ -1,107 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* The rule system borrows from a quote sheet — the thing M-CON actually hands a client.
+   Figures align on a decimal column the way they do on an invoice, which is what makes
+   the published rates read as a working document rather than as marketing. */
+
+html {
+  /* Nothing should ever scroll sideways on a phone. */
+  overflow-x: hidden;
+}
+
 body {
-  background: #F5F6F7;
-  color: #1B2430;
+  background: #FBFBFA;
+  overflow-x: hidden;
+  color: #1E282C;
+  -webkit-font-smoothing: antialiased;
 }
 
-.stamp {
-  transform: rotate(-4deg);
-  letter-spacing: 0.08em;
+h1, h2, h3 {
+  font-family: Archivo, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
-.tag-notch {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-}
+.rule-item { border-bottom: 1px solid #C9CFCE; }
+.rule-total { border-top: 2px solid #1E282C; }
+.figures { font-variant-numeric: tabular-nums; }
 
-::selection {
-  background: #E85D2A;
-  color: white;
-}
+/* Email addresses and long unbroken strings break rather than widen the page. */
+p, dd, dt, li, figcaption { overflow-wrap: break-word; }
 
-button, a, [tabindex] {
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #A3231B;
   outline-offset: 2px;
 }
-button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #2B5C77;
-}
 
-/* ---------------------------------------------------------------------------
-   Print / Save-as-PDF
-   The weekly report goes to clients, so a print shows the report alone.
-
-   This deliberately does NOT use the common `body * { visibility: hidden }` +
-   `position: absolute` trick: absolutely positioned content that spans several pages
-   breaks pagination in Chrome, which is why a long photo report previewed blank.
-   Instead the page chrome is hidden with display:none and the report stays in normal
-   document flow, which paginates correctly however long it is.
-   --------------------------------------------------------------------------- */
-@media print {
-  .no-print { display: none !important; }
-
-  /* Anything outside the report that would otherwise print alongside it. */
-  header, nav { display: none !important; }
-
-  body {
-    background: #fff !important;
-    margin: 0 !important;
-  }
-
-  main {
-    max-width: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  #report-print {
-    border: none !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    background: #fff !important;
-  }
-
-  /* Photos print four to a page: a 2x2 grid, each cell sized so two rows fill the
-     printable height of a letter/A4 page inside the 14mm margins. On screen the grid
-     stays a compact thumbnail strip — these rules apply only when printing. */
-  #report-print .report-photos {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 6mm !important;
-  }
-
-  /* Start the photos on their own page when there's a table above them, then break
-     before every subsequent group of four. The leading break is applied conditionally
-     from the component — a photos-only report has nothing above it worth pushing onto
-     its own sheet. */
-  #report-print .break-before-page { break-before: page; page-break-before: always; }
-  #report-print .report-photo:nth-child(4n + 1):not(:first-child) {
-    break-before: page;
-    page-break-before: always;
-  }
-
-  #report-print .report-photo {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  #report-print .report-photo-img {
-    width: 100% !important;
-    height: 105mm !important;
-    /* contain, not cover: a client should see the whole photo, not a centre crop. */
-    object-fit: contain !important;
-    background: #f2f2f2;
-  }
-
-  /* Captions and dates are hidden on screen (the grid is only a thumbnail check there)
-     but are worth having on the printed copy at this size. */
-  #report-print .report-photo-caption { display: block !important; }
-
-  #report-print section, #report-print .report-block { break-inside: avoid; }
-
-  @page { margin: 14mm; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
 }
