@@ -1,20 +1,67 @@
 /** @type {import('next').NextConfig} */
+
+// Redirects from the old LinkNow URL structure.
+//
+// The old site had 142 pages, including 95 templated location pages — a page per service
+// per town. Those are consolidated here, but every old URL still has to resolve: links
+// from directories, Google's index and anything a past client bookmarked all point at
+// them. A 301 passes the accumulated ranking to the new page; a 404 throws it away.
+const redirects = [
+  // Service pages under their old paths
+  ["/services/kitchen-renovations", "/renovations"],
+  ["/services/bathroom-renovations", "/renovations"],
+  ["/renovations/basement-renovations", "/renovations"],
+  ["/services/countertop-installation", "/renovations"],
+  ["/services/hardwood-flooring", "/renovations"],
+  ["/services/home-improvement", "/renovations"],
+  ["/services/home-repair", "/renovations"],
+  ["/construction/framing", "/framing-and-carpentry"],
+  ["/services/carpentry", "/framing-and-carpentry"],
+  ["/construction/new-construction", "/new-builds"],
+  ["/services/garages", "/new-builds"],
+  ["/services/deck-construction", "/decks-siding-and-exterior"],
+  ["/services/siding", "/decks-siding-and-exterior"],
+  ["/services/window-installation", "/decks-siding-and-exterior"],
+  ["/services/door-services", "/decks-siding-and-exterior"],
+  ["/services/fencing", "/decks-siding-and-exterior"],
+  ["/services/gutter-services", "/faq"],
+  ["/construction/concrete", "/concrete-and-icf"],
+  ["/services/foundations", "/concrete-and-icf"],
+  ["/services/roofing", "/roofing"],
+  ["/services/commercial-roof-repair", "/roofing"],
+  ["/services/chimney-removal", "/faq"],
+  ["/services/insurance-emergency-work-and-rebuilds", "/insurance-and-restoration"],
+  ["/services/commercial", "/commercial"],
+  ["/services/general-contractor", "/"],
+  ["/services/construction-contractor", "/"],
+  ["/services/renovation-contractor", "/"],
+  ["/services/storage-facilities", "/"],
+  ["/services/rental-equipment", "/insurance-and-restoration"],
+  ["/services/real-estate-transaction-quotes", "/contact"],
+  ["/about-us", "/about"],
+  ["/about-us/testimonials", "/about"],
+  ["/about-us/gallery", "/gallery"],
+  ["/contact-us", "/contact"],
+  ["/blog", "/"],
+];
+
 const nextConfig = {
-  // pdf.js must be left OUT of the server bundle.
-  //
-  // Even with no worker thread, pdf.js loads its parsing engine by requiring
-  // './pdf.worker.js' at runtime — the "fake worker" path. Next bundles the library and
-  // that sibling file isn't traced with it, so on Vercel every extraction died with
-  // `Setting up fake worker failed: "Cannot find module './pdf.worker.js'"`.
-  //
-  // Marking it external leaves it in node_modules where the require can find it. This
-  // is why receipt PDFs parsed perfectly in testing and not at all in production.
-  experimental: {
-    serverComponentsExternalPackages: ["pdfjs-dist"],
-  },
-  webpack: (config) => {
-    config.resolve.alias.canvas = false;
-    return config;
+  async redirects() {
+    return [
+      ...redirects.map(([source, destination]) => ({ source, destination, permanent: true })),
+      // Every location landing page folded into its service. The old structure was
+      // /areas-of-service/<town>-<service>, so one wildcard catches all 95 rather than
+      // listing them — they were templated from the same copy anyway.
+      // ":slug+" requires at least one path segment. With ":slug*" the pattern also
+      // matches the bare path, so "/renovations" matched its own rule and redirected to
+      // itself — an infinite loop that took the page down entirely. The others were
+      // harmless only because their destination happened to differ from their source.
+      { source: "/areas-of-service/:slug+", destination: "/", permanent: true },
+      { source: "/services/:slug+", destination: "/", permanent: true },
+      { source: "/construction/:slug+", destination: "/", permanent: true },
+      { source: "/renovations/:slug+", destination: "/renovations", permanent: true },
+    ];
   },
 };
+
 export default nextConfig;
